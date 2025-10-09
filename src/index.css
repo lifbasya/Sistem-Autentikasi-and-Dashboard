@@ -4,12 +4,6 @@
 @custom-variant dark (&:is(.dark *));
 
 body {
-  background: #776dcc;
-  background: linear-gradient(
-    151deg,
-    rgba(119, 109, 204, 1) 0%,
-    rgba(149, 132, 184, 1) 100%
-  );
   font-family: roboto, sans-serif;
 }
 

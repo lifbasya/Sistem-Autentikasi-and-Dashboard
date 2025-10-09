@@ -38,7 +38,7 @@ function Register() {
 
   return (
     <>
-      <main className="flex justify-center items-center min-h-screen">
+      <main className="flex justify-center items-center min-h-screen bg-linear-to-r from-cyan-500 to-blue-500">
         <div className="bg-white flex flex-col justify-center items-center px-6 py-7 rounded-xl gap-4 max-w-[340px] w-full">
           <div className="flex flex-col gap-4 justify-center items-center w-full">
             <img src="/registericon.svg" alt="key image" className="w-16" />
