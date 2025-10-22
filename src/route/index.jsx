@@ -3,6 +3,7 @@ import Login from "../pages/login";
 import Register from "../pages/register";
 import DashboardUser from "@/pages/dashboard/dashboardUsers/dashboardUser";
 import NotFound from "../pages/404notfound";
+import AddUser from "../pages/dashboard/dashboardUsers/addUser";
 
 export default function Route() {
   const router = createBrowserRouter([
@@ -22,6 +23,10 @@ export default function Route() {
       path: "/dashboard/user",
       element: <DashboardUser />,
     },
+    {
+      path: "/dashboard/users/add",
+      element: <AddUser />,
+    }
   ]);
   return <RouterProvider router={router} />;
 }
