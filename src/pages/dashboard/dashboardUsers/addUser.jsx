@@ -10,6 +10,9 @@ import { FormControl } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { addUser } from "@/utils/api/users";
 import { FormMessage } from "@/components/ui/form";
+import Swal from "sweetalert2";
+import { ArrowLeft } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const addUserSchema = z.object({
   fullname: z
@@ -60,16 +63,30 @@ function AddUser() {
     console.log(data);
     try {
       const message = await addUser(data);
-      alert("User berhasil ditambahkan: " + message);
+      Swal.fire({
+        title: "Success",
+        text: "Berhasil menambahkan user",
+        icon: "success",
+      });
     } catch (error) {
       console.error("Error adding user:", error);
-      alert("Gagal menambahkan user.");
+      Swal.fire({
+        title: "error",
+        text: "Gagal menambahkan user",
+        icon: "error",
+      });
     }
   };
+
+  const navigate = useNavigate();
 
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+      <div className="flex text-lg gap-3 items-center">
+        <ArrowLeft className="cursor-pointer" onClick={() => navigate(-1)} />
+        <h1 className="font-bold">Tambah User</h1>
+      </div>
         {/* Nama Lengkap */}
         <FormField
           control={form.control}
